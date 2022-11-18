@@ -66,6 +66,7 @@ function store(req, res) {
               } else {
                 message = 'se incribe correctamente';
                 data['times'] = 1;
+                data['enabled'] = 1;
                 conn.query('INSERT INTO competitor SET ?', [data], (err, rows) => {
                   if(err) {
                     // res.json(err);

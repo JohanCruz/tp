@@ -2,17 +2,30 @@
 
   <h1 class="text-center text-3xl font-bold">Inscribirse</h1>
 
+  {{#if message}}
+  <p> {{ message }}</p>
+  {{/if}}
+
+  {{#if unableForm }}
+  <p></p>
+  {{else}}
   <form action="" method="POST" class="mt-4">
-
-    <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
-      p-2 my-2 focus:bg-white" placeholder="Competencia" name="contest">
-
+    
     <input type="number" class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
       p-2 my-2 focus:bg-white" placeholder="id empleado" name="id_employee">
+
+    <select class="border border-gray-200 rounded-md bg-gray-200 w-full text-lg placeholder-gray-500 
+      p-2 my-2 focus:bg-white" name="id_contest" id="id_contest">
+        <option value="">--Por favor escoja una competencia--</option>
+        <option value=1>Canto</option>
+        <option value=2>Baile</option>
+        <option value=3>Ilustración</option>
+    </select>    
 
     <button type="submit" class="rounded-md bg-green-500 w-full text-lg text-white font-semibold p-2 my-3
       hover:bg-green-600 focus:bg-green-700">Inscribir</button>
 
   </form>
+  {{/if}}
 
 </div>

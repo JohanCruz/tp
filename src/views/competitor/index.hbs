@@ -13,6 +13,7 @@
           <th class="w-1/4 py-4 ...">Cargo</th>
           <th class="w-1/2 py-4 ...">Habilitado</th>
           <th class="w-1/2 py-4 ...">Concurso</th>
+          <th class="w-1/2 py-4 ..."># Veces inscrito</th>
           <th class="w-28 py-4 ...">Opciones</th>
         </tr>
       </thead>
@@ -25,6 +26,7 @@
           <td class="p-3 text-center">{{employee_position}}</td>
           <td class="p-3 text-center">{{competitor_enabled}}</td>
           <td class="p-3 text-center">{{contest_name}}</td>
+          <td class="p-3 text-center">{{times}}</td>
           <td class="p-3 flex">
             <form action="/competitor/delete" method="POST" class="mx-2">
               <input type="hidden" value="{{id}}" name="id">

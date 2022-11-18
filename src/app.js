@@ -8,12 +8,15 @@ const competitorRoutes = require('./routes/competitor');
 const app = express();
 app.set('port', 4000);
 
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
 
 app.set('views', __dirname + '/views');
 app.engine('.hbs', engine({
     extname: '.hbs'
 }));
-
 app.set('view engine', 'hbs');
 
 app.use(myconnection(mysql,{
@@ -27,7 +30,6 @@ app.use(myconnection(mysql,{
 app.listen(app.get('port'), () => {
     console.log('Listen on port', app.get('port'));
 });
-
 
 app.use('/', competitorRoutes);
 
